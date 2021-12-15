@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const Body = styled.div`
     margin:5% 8%;
     text-align: center; 
+    height: auto;
+    width: auto;
 
 `
 export const Img = styled.div`
@@ -17,6 +19,7 @@ export const Container = styled.div`
 
 `
 export const ContLinks = styled.div`
+    overflow: hidden;
     margin-top: -5.5%;
     text-align: center; 
     display: grid;
@@ -25,6 +28,7 @@ export const ContLinks = styled.div`
     border-color: #1690C3;
     border-style: solid;
     border-radius: 7px;
+    
     border-width: thin;
 `
 export const ContSocials = styled.div`
@@ -41,7 +45,7 @@ export const ContSocials = styled.div`
     border-radius: 40px;
 `
 export const Social = styled.div`
-    margin-top: 2.5%;
+    margin-top: 20%;
 `
 export const Links = styled.div`
     padding:2% 0;
@@ -49,15 +53,14 @@ export const Links = styled.div`
     border-style: solid;
     border-width: thin;
     border-radius: 4px;
-    font-family: Helvetica;
+    font-family: 'Suisse-Int-Thin';
     color:#1690C3;
 `
 export const SubTitle = styled.div`
-    font-family: Helvetica;
-    color:#1690C3;
-    padding-top:20%;
+    font-family: 'Suisse-Int-Medium';
+    color:#7CCCED;
+    padding-top:5%;
     font-size: 150%;
-    font-weight: bolder;
 `
 export const ContEvent = styled.div`
     margin-top:3%;

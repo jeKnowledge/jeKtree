@@ -1,8 +1,24 @@
+@font-face {
+  font-family: Suisse-Int-Bold;
+  src: url('Fonts/SuisseIntl-Bold.otf');
+}
+@font-face {
+  font-family: Suisse-Int-Medium;
+  src: url('Fonts/SuisseIntl-Medium.otf');
+}
+@font-face {
+  font-family: Suisse-Int-SemiBold;
+  src: url('Fonts/SuisseIntl-SemiBold.otf');
+}
+@font-face {
+  font-family: Suisse-Int-Thin;
+  src: url('Fonts//SuisseIntl-Thin.otf');
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Suisse-Int-Medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
