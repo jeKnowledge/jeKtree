@@ -1,0 +1,62 @@
+{
+    "Social": [
+        {
+            "name": "Insta",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Twiter",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Facebook",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Facebook",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Facebook",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        }
+    ],
+    "Links": [
+        {
+            "name": "Website",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Recrutamento",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "jeKfolio",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "jeKmagazine",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "jeK Reporter",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "jeking' Out Loud",
+            "link": "https://www.instagram.com/jeknowledge/"
+        }
+    ],
+    "Events": [
+        {
+            "name": "Lime",
+            "path": "linkedin.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        }
+    ]
+}
