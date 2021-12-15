@@ -19,11 +19,11 @@ export const Container = styled.div`
 
 `
 export const ContLinks = styled.div`
-    overflow: hidden;
     margin-top: -5.5%;
     text-align: center; 
-    display: grid;
-    grid-gap: 6%;
+    display: flex; 
+    flex-direction: column; 
+    gap: 2vh;
     padding: 10% 5%;
     border-color: #1690C3;
     border-style: solid;
