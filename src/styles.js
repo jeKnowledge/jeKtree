@@ -52,23 +52,23 @@ export const EventLogo = styled.div`
     bottom: 10%;
     padding: 2%;
 
-    & .sliderL {
+    & .LogoSlide {
         display: flex;
         justify-content: center;
         align-items: center;
       }
       
-    & .imageL {
+    & .Imglogo {
         width: 100%;
         height: 100%;
       }
       
-    & .slideL {
+    & .logo {
         opacity: 0;
         transition-duration: 1s ease;
       }
       
-    & .slide.activeL {
+    & .logo.ativo {
         opacity: 1;
         transition-duration: 1s;
         transform: scale(1.08);
@@ -77,13 +77,13 @@ export const EventLogo = styled.div`
 
 `
 export const EventImg = styled.div`
-    & .slider {
+    & .EventoSlide {
         border-color: #FFFFFF;
         border-style: solid;
 
       }
       
-    & .image {
+    & .ImgEvent {
         position:relative;
         max-width: 65vw;
         max-height: 20vh;
@@ -94,22 +94,12 @@ export const EventImg = styled.div`
         margin-right:-8%;    
       }
       
-    & .right-arrow {
-        position: absolute;
-        top: 50%;
-        right: 32px;
-        font-size: 3rem;
-        color: #000;
-        z-index: 10;
-        cursor: pointer;
-        user-select: none;
-      }
-    & .slide {
+    & .Evento {
         opacity: 0;
         transition-duration: 1s ease;
       }
       
-    & .slide.active {
+    & .Evento.ativo {
         opacity: 1;
         transition-duration: 1s;
         transform: scale(1.0);

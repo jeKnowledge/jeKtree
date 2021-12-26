@@ -9,16 +9,20 @@ function App() {
   const [current, setCurrent] = useState(0);
   const length = Data.Events.length;
 
-  const nextSlide = () => {
+  const proxEvento = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-  const moveSlide = index => {
+  const moveEvento = index => {
     setCurrent(index)
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      proxEvento();
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [proxEvento]);
+
   if (isMobile) {
     return (
       <div>
@@ -42,29 +46,29 @@ function App() {
         <SubTitle>Our Events</SubTitle>
 
         <ContEvent>
-          <EventLogo className='sliderL'>
+          <EventLogo className='LogoSlide'>
             {Data.Events.map((Image, index) => {
               return (
                 <div
-                  className={index === current ? 'slide activeL' : 'slideL'}
+                  className={index === current ? 'logo ativo' : 'logo'}
                   key={index}
                 >
                   {index === current && (
-                    <img src={Image.pathLogo} alt="" className='imageL' />
+                    <img src={Image.pathLogo} alt="" className='Imglogo' />
                   )}
                 </div>
               );
             })}
           </EventLogo>
-          <EventImg className='slider'>
+          <EventImg className='EventoSlide'>
             {Data.Events.map((Image, index) => {
               return (
                 <div
-                  className={index === current ? 'slide active' : 'slide'}
+                  className={index === current ? 'Evento ativo' : 'Evento'}
                   key={index}
                 >
                   {index === current && (
-                    <img src={Image.pathImg} alt="" className='image' />
+                    <img src={Image.pathImg} alt="" className='ImgEvent' />
                   )}
                 </div>
               );
@@ -76,7 +80,7 @@ function App() {
         <ContDots>
           {Array.from({ length: Data.Events.length }).map((item, index) => (
             <div
-              onClick={() => moveSlide(index)}
+              onClick={() => moveEvento(index)}
               className={index === current ? "dot active" : "dot"}
             ></div>
           ))}
