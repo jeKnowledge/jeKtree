@@ -1,28 +1,28 @@
 {
     "Social": [
         {
-            "name": "Insta",
-            "path": "linkedin.png",
-            "link": "https://www.instagram.com/jeknowledge/"
-        },
-        {
-            "name": "Twiter",
-            "path": "linkedin.png",
+            "name": "linkedin",
+            "path": "Linkedin.png",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
             "name": "Facebook",
-            "path": "linkedin.png",
+            "path": "Facebook.png",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
-            "name": "Facebook",
-            "path": "linkedin.png",
+            "name": "Instagram",
+            "path": "Instagram.png",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
-            "name": "Facebook",
-            "path": "linkedin.png",
+            "name": "Youtube",
+            "path": "Youtube.png",
+            "link": "https://www.instagram.com/jeknowledge/"
+        },
+        {
+            "name": "Mail",
+            "path": "Mail.png",
             "link": "https://www.instagram.com/jeknowledge/"
         }
     ],
@@ -54,9 +54,14 @@
     ],
     "Events": [
         {
-            "name": "Lime",
-            "path": "linkedin.png",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "name": "Ai Sunsets",
+            "pathLogo": "EventLogo.png",
+            "pathImg": "EventImage.png"
+        },
+        {
+            "name": ".Works",
+            "pathLogo": "EventLogo2.png",
+            "pathImg": "EventImage2.png"
         }
     ]
 }

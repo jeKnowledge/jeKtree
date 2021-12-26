@@ -21,6 +21,8 @@ body {
   font-family: 'Suisse-Int-Medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000530;
+  text-align: center; 
 }
 
 code {
