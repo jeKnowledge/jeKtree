@@ -141,8 +141,8 @@ function App() {
           }
         </ContLinks>
         <SubTitle>Our Events</SubTitle>
-        <ContEvent id="Event">
-          <EventLogo className='LogoSlide'>
+        <ContEvent id="Event" onClick={() => window.open(Data.Events[current].link, "_self")}>
+          <EventLogo className='LogoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
             {Data.Events.map((Image, index) => {
               return (
                 <div
@@ -156,7 +156,7 @@ function App() {
             })
             }
           </EventLogo>
-          <EventImg className='EventoSlide'>
+          <EventImg className='EventoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
             {Data.Events.map((Image, index) => {
               return (
                 <div

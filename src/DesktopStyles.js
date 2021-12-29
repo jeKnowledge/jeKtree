@@ -70,11 +70,18 @@ export const ContEvent = styled.div`
     &:hover {
         background-color:#EEEEEE;
       } 
+    @media(max-width: 1400px) {
+        min-height:20vh;
+    }
     
 `
 export const EventLogo = styled.div`
     position:absolute;
-    bottom:3vh;
+    bottom:5.5vh;
+    @media(max-width: 1400px) {
+        bottom:1.5vh;
+    }
+    
     left:4.5%;
 
     & .LogoSlide {
@@ -113,7 +120,7 @@ export const EventImg = styled.div`
         position:relative;
         border-radius: 10px;
         width: 45vw;
-        height:auto;
+        height: auto;
         margin:2% 0;
         margin-top:3%;
         margin-right:-15%;    

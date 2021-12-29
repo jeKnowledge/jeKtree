@@ -18,7 +18,7 @@
         {
             "name": "Youtube",
             "path": "RedesSociais+Jek\\youtube.svg",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://www.youtube.com/channel/UCpfDQKOMNKaiUcm3IrinlsA"
         },
         {
             "name": "Mail",
@@ -55,18 +55,21 @@
     "Events": [
         {
             "name": "Ai Sunsets",
+            "link": "https://www.facebook.com/hashtag/jekreporter",
             "pathLogo": "LogosEventos\\aisunsets_white.svg",
             "pathLogoHover": "LogosEventos\\aisunsets_hover.svg",
             "pathImg": "FotosEventos\\aisunsets.png"
         },
         {
             "name": "Jek Academy",
+            "link": "https://www.facebook.com/hashtag/jekreporter",
             "pathLogo": "LogosEventos\\jekacademy.png",
             "pathLogoHover": "LogosEventos\\jekacademy_hover.png",
             "pathImg": "FotosEventos\\academy.png"
         },
         {
             "name": "Porto.BC",
+            "link": "https://www.facebook.com/hashtag/jekreporter",
             "pathLogo": "LogosEventos\\portobc.png",
             "pathLogoHover": "LogosEventos\\portobc_hover.png",
             "pathImg": "FotosEventos\\dotworks.png"
