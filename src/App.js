@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Data from './data.json'
-import { Header, ContLinks, Links, SubTitle, ContEvent, EventLogo, EventImg, Footer, Social, ContDots, EventTitle } from './styles'
+import { HeaderMobile, ContLinksMobile, LinksMobile, SubTitleMobile, ContEventMobile, EventLogoMobile, EventImgMobile, FooterMobile, SocialMobile, ContDotsMobile, EventTitleMobile } from './MobileStyles'
+import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links, SubTitle, ContEvent, EventLogo, EventImg, EventTitle, ContDots } from './DesktopStyles'
 
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
   const moveEvento = index => {
     setCurrent(index)
   }
-
   useEffect(() => {
     const interval = setInterval(() => {
       proxEvento();
@@ -23,13 +23,109 @@ function App() {
     return () => clearInterval(interval)
   }, [proxEvento]);
 
+  const [hover, setHover] = useState(false);
+  var element = document.getElementById('Event');
+  if (element) {
+    element.addEventListener('mouseenter', function () {
+      setHover(false);
+    });
+    element.addEventListener('mouseleave', function () {
+      setHover(true);
+    });
+  }
+
   if (isMobile) {
     return (
       <div>
+        <HeaderMobile>
+          <div><img src="RedesSociais+Jek\\JekLogo.svg" width="32%" height="32%" alt="" /></div>
+          <img src="RedesSociais+Jek\\JekSubTitle.svg" width="37%" height="37%" alt="" />
+        </HeaderMobile>
+
+        <ContLinksMobile>
+          {
+            Data.Links.map(data => {
+              return (
+                <div key={data.name}>
+                  <LinksMobile onClick={() => window.open(data.link, "_self")}>{data.name}</LinksMobile>
+                </div>
+              )
+            })
+          }
+        </ContLinksMobile>
+        <SubTitleMobile>Our Events</SubTitleMobile>
+
+        <ContEventMobile>
+          <EventLogoMobile className='LogoSlide'>
+            {Data.Events.map((Image, index) => {
+              return (
+                <div
+                  className={index === current ? 'logo ativo' : 'logo'}
+                  key={index}
+                >
+                  {index === current && (
+                    <img src={Image.pathLogo} alt="" className='Imglogo' />
+                  )}
+                </div>
+              );
+            })}
+          </EventLogoMobile>
+          <EventImgMobile className='EventoSlide'>
+            {Data.Events.map((Image, index) => {
+              return (
+                <div
+                  className={index === current ? 'Evento ativo' : 'Evento'}
+                  key={index}
+                >
+                  {index === current && (
+                    <img src={Image.pathImg} alt="" className='ImgEvent' />
+                  )}
+                </div>
+              );
+            })}
+          </EventImgMobile>
+
+        </ContEventMobile>
+        <EventTitleMobile>{Data.Events[current].name}</EventTitleMobile>
+        <ContDotsMobile>
+          {Array.from({ length: Data.Events.length }).map((item, index) => (
+            <div
+              onClick={() => moveEvento(index)}
+              className={index === current ? "dot active" : "dot"}
+            ></div>
+          ))}
+        </ContDotsMobile>
+
+        <FooterMobile>
+          {
+            Data.Social.map(data => {
+              return (
+                <div key={data.name}>
+                  <SocialMobile onClick={() => window.open(data.link, "_self")}><img src={data.path} alt={data.name} /></SocialMobile>
+                </div>
+              )
+            })
+          }
+        </FooterMobile>
+      </div >
+    );
+  } else {
+    return (
+      <div>
         <Header>
-          <div><img src="Logo.png" width="32%" height="32%" alt="" /></div>
-          <img src="LogoSubTitle.png" width="37%" height="37%" alt="" />
+          <HeaderSocial>
+            {
+
+              Data.Social.map(data => {
+                return (
+                  <div key={data.name} onClick={() => window.open(data.link, "_self")}><img src={data.path} alt={data.name} /></div>
+                )
+              })
+            }
+          </HeaderSocial>
         </Header>
+        <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={125} height={125} alt="" /></JekLogo>
+        <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={200} height={200} alt="" /></JekSubTitle>
 
         <ContLinks>
           {
@@ -44,21 +140,20 @@ function App() {
           }
         </ContLinks>
         <SubTitle>Our Events</SubTitle>
-
-        <ContEvent>
+        <ContEvent id="Event">
           <EventLogo className='LogoSlide'>
             {Data.Events.map((Image, index) => {
               return (
                 <div
                   className={index === current ? 'logo ativo' : 'logo'}
-                  key={index}
-                >
+                  key={index}>
                   {index === current && (
-                    <img src={Image.pathLogo} alt="" className='Imglogo' />
-                  )}
+                    <img src={hover ? Image.pathLogo : Image.pathLogoHover}
+                      alt="" className='Imglogo' />)}
                 </div>
               );
-            })}
+            })
+            }
           </EventLogo>
           <EventImg className='EventoSlide'>
             {Data.Events.map((Image, index) => {
@@ -74,9 +169,10 @@ function App() {
               );
             })}
           </EventImg>
-
         </ContEvent>
+
         <EventTitle>{Data.Events[current].name}</EventTitle>
+
         <ContDots>
           {Array.from({ length: Data.Events.length }).map((item, index) => (
             <div
@@ -85,32 +181,7 @@ function App() {
             ></div>
           ))}
         </ContDots>
-
-        <Footer>
-          {
-
-            Data.Social.map(data => {
-              return (
-                <div key={data.name}>
-                  <Social onClick={() => window.open(data.link, "_self")}><img src={data.path} alt={data.name} /></Social>
-                </div>
-              )
-            })
-          }
-        </Footer>
-
-
-
-
-
-
-
-
-      </div >
-    );
-  } else {
-    return (
-      <p>Width {'>'} 600</p>
+      </div>
     );
   }
 

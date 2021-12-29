@@ -1,11 +1,28 @@
-
 import styled from "styled-components"
 
 export const Header = styled.div`
-    margin: 10% 0;
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:#000530;
+
+`
+export const HeaderSocial = styled.div`
+    display: flex;
+    padding-right:50px;
+    margin: 25px 0;
+    gap:30px;
+    justify-content: flex-end;
+`
+
+export const JekLogo = styled.div`
+    margin-top:125px;
+`
+export const JekSubTitle = styled.div`
+    margin-top:-40px;
 `
 export const ContLinks = styled.div`
-    margin 0 8%;
+    margin 0 20%;
     width:auto;
     text-align: center; 
     display: flex; 
@@ -17,40 +34,47 @@ export const Links = styled.div`
     align-items: center;
     justify-content: center;
     overflow:auto;
-    margin-bottom:2%;
+    margin-bottom:1%;
     border-color: #13234E;
     border-style: solid;
     border-width: thin;
-    border-radius: 13px;
+    border-radius: 11px;
     background-color:#13234E;
-    font-family: 'Suisse-Int-Thin';
-    color: #FFFFFF;
-    min-height: 4.75vh;
+    font-family: 'Suisse-Int-Regular';
+    font-size:24px;
+    color: #EEEEEE;
+    min-height: 55px;
+
+    &:hover {
+        background-color:#EEEEEE;
+        color: #13234E;
+      }
 `
 export const SubTitle = styled.div`
-    margin-top:8%;
-    font-family: 'Suisse-Int-Medium';
-    color:#FFFFFF;
-    padding:5%;
-    font-size: 120%;
+    margin-top:30px;
+    font-family: 'Suisse-Int-Bold';
+    color:#EEEEEE;
+    padding:3%;
+    font-size: 26px;
 `
 export const ContEvent = styled.div`
     position:relative;
-    width: 90%;
+    width: 60%;
     background-color:#13234E;
     margin: 0 auto;
     border-color: #13234E;
     border-style: solid;
     border-width: thin;
-    border-radius: 13px;
-    
+    border-radius: 11px;
+    &:hover {
+        background-color:#EEEEEE;
+      } 
     
 `
 export const EventLogo = styled.div`
     position:absolute;
-    left: 2%;
-    bottom: 10%;
-    padding: 2%;
+    bottom:3vh;
+    left:4.5%;
 
     & .LogoSlide {
         display: flex;
@@ -59,8 +83,8 @@ export const EventLogo = styled.div`
       }
       
     & .Imglogo {
-        width: 100%;
-        height: 100%;
+        width: 7vw;
+        height: auto;
       }
       
     & .logo {
@@ -77,21 +101,21 @@ export const EventLogo = styled.div`
 
 `
 export const EventImg = styled.div`
+    object-fit: contain;
     & .EventoSlide {
-        border-color: #FFFFFF;
+        border-color: #EEEEEE;
         border-style: solid;
-
+        margin:5%;
       }
       
     & .ImgEvent {
         position:relative;
-        max-width: 65vw;
-        max-height: 20vh;
         border-radius: 10px;
-        padding: 2% 0; 
-        padding-top:3%;
-        padding-left:15%;
-        margin-right:-8%;    
+        width: 45vw;
+        height:auto;
+        margin:2% 0;
+        margin-top:3%;
+        margin-right:-15%;    
       }
       
     & .Evento {
@@ -106,38 +130,27 @@ export const EventImg = styled.div`
       }
 `
 export const EventTitle = styled.div`
-    margin:5%;
-    font-family: 'Suisse-Int-Thin';
-    color:#FFFFFF;
+    margin:65px;
+    font-family: 'Suisse-Int-Light';
+    color:#EEEEEE;
+    font-size:26px;
+
     
 `
 export const ContDots = styled.div`
     display: inline-flex;
+    margin-top:5px;
+    margin-bottom:200px;
     & .dot{
-        width: 5px;
-        height: 5px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
-        border: 2px solid #FFFFFF;
-        margin: 0 5px;
+        border: 2px solid #EEEEEE;
+        margin: 0 13px;
         background: #13234E;
     }
 
     & .dot.active{
-        background: #FFFFFF;
+        background: #EEEEEE;
     }
- `
-export const Footer = styled.div`
-    margin-top:10%;
-    background-color: #13234E;
-    display:flex;
-    gap:5%;
-    justify-content: center;
-`
-export const Social = styled.div`
-    padding:25% 0;
-    padding-top:50%;
-    width: 40%;
-    height: 40%;
-
-`
-    ;
+ `;

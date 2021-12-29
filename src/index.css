@@ -1,24 +1,19 @@
 @font-face {
   font-family: Suisse-Int-Bold;
-  src: url('Fonts/SuisseIntl-Bold.otf');
+  src: url('Fonts//SuisseIntlCond-Bold-WebS.ttf');
 }
 @font-face {
-  font-family: Suisse-Int-Medium;
-  src: url('Fonts/SuisseIntl-Medium.otf');
+  font-family: Suisse-Int-Regular;
+  src: url('Fonts//SuisseIntlCond-Regular-WebS.ttf');
 }
 @font-face {
-  font-family: Suisse-Int-SemiBold;
-  src: url('Fonts/SuisseIntl-SemiBold.otf');
-}
-@font-face {
-  font-family: Suisse-Int-Thin;
-  src: url('Fonts//SuisseIntl-Thin.otf');
+  font-family: Suisse-Int-Light;
+  src: url('Fonts//SuisseIntlCond-Light-WebS.ttf');
 }
 
 
 body {
   margin: 0;
-  font-family: 'Suisse-Int-Medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000530;

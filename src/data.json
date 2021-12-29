@@ -2,27 +2,27 @@
     "Social": [
         {
             "name": "linkedin",
-            "path": "Linkedin.png",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "path": "RedesSociais+Jek\\linkedin.svg",
+            "link": "https://www.linkedin.com/company/jeknowledge/"
         },
         {
             "name": "Facebook",
-            "path": "Facebook.png",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "path": "RedesSociais+Jek\\facebook.svg",
+            "link": "https://www.facebook.com/jeknowledge"
         },
         {
             "name": "Instagram",
-            "path": "Instagram.png",
+            "path": "RedesSociais+Jek\\instagram.svg",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
             "name": "Youtube",
-            "path": "Youtube.png",
+            "path": "RedesSociais+Jek\\youtube.svg",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
             "name": "Mail",
-            "path": "Mail.png",
+            "path": "RedesSociais+Jek\\mail.svg",
             "link": "https://www.instagram.com/jeknowledge/"
         }
     ],
@@ -33,35 +33,43 @@
         },
         {
             "name": "Recrutamento",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://jeknowledge.pt/recrutamento/"
         },
         {
             "name": "jeKfolio",
             "link": "https://www.instagram.com/jeknowledge/"
         },
         {
-            "name": "jeKmagazine",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "name": "jeK Magazine",
+            "link": "https://issuu.com/jeknowledge_"
         },
         {
             "name": "jeK Reporter",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://www.facebook.com/hashtag/jekreporter"
         },
         {
             "name": "jeking' Out Loud",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://open.spotify.com/show/4QsToiJztwVyMcnqSWw6Vi?si=dzVLXLoDRUyEyg1TAxhoaw&nd=1"
         }
     ],
     "Events": [
         {
             "name": "Ai Sunsets",
-            "pathLogo": "EventLogo.png",
-            "pathImg": "EventImage.png"
+            "pathLogo": "LogosEventos\\aisunsets_white.svg",
+            "pathLogoHover": "LogosEventos\\aisunsets_hover.svg",
+            "pathImg": "FotosEventos\\aisunsets.png"
         },
         {
-            "name": ".Works",
-            "pathLogo": "EventLogo2.png",
-            "pathImg": "EventImage2.png"
+            "name": "Jek Academy",
+            "pathLogo": "LogosEventos\\jekacademy.png",
+            "pathLogoHover": "LogosEventos\\jekacademy_hover.png",
+            "pathImg": "FotosEventos\\academy.png"
+        },
+        {
+            "name": "Porto.BC",
+            "pathLogo": "LogosEventos\\portobc.png",
+            "pathLogoHover": "LogosEventos\\portobc_hover.png",
+            "pathImg": "FotosEventos\\dotworks.png"
         }
     ]
 }
