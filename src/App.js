@@ -43,7 +43,7 @@ function App() {
           <img src="RedesSociais+Jek\\JekSubTitle.svg" width="37%" height="37%" alt="" />
         </HeaderMobile>
 
-        <ContLinksMobile>
+        <ContLinksMobile >
           {
             Data.Links.map(data => {
               return (
@@ -56,8 +56,8 @@ function App() {
         </ContLinksMobile>
         <SubTitleMobile>Our Events</SubTitleMobile>
 
-        <ContEventMobile>
-          <EventLogoMobile className='LogoSlide'>
+        <ContEventMobile onClick={() => window.open(Data.Events[current].link, "_self")}>
+          <EventLogoMobile className='LogoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
             {Data.Events.map((Image, index) => {
               return (
                 <div
@@ -71,7 +71,7 @@ function App() {
               );
             })}
           </EventLogoMobile>
-          <EventImgMobile className='EventoSlide'>
+          <EventImgMobile className='EventoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
             {Data.Events.map((Image, index) => {
               return (
                 <div
