@@ -23,7 +23,7 @@ function App() {
     return () => clearInterval(interval)
   }, [proxEvento]);
 
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(true);
   var element = document.getElementById('Event');
   if (element) {
     element.addEventListener('mouseenter', function () {
