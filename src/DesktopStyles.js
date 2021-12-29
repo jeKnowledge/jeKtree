@@ -60,6 +60,7 @@ export const SubTitle = styled.div`
 export const ContEvent = styled.div`
     position:relative;
     width: 60%;
+    min-height:60vh;
     background-color:#13234E;
     margin: 0 auto;
     border-color: #13234E;

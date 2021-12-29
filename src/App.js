@@ -7,6 +7,18 @@ import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links, SubTitle,
 function App() {
 
   const isMobile = window.screen.width < 600
+
+  const [hover, setHover] = useState(true);
+  var element = document.getElementById('Event');
+  if (element) {
+    element.addEventListener('mouseenter', function () {
+      setHover(false);
+    });
+    element.addEventListener('mouseleave', function () {
+      setHover(true);
+    });
+  }
+
   const [current, setCurrent] = useState(0);
   const length = Data.Events.length;
 
@@ -22,17 +34,6 @@ function App() {
     }, 5000)
     return () => clearInterval(interval)
   }, [proxEvento]);
-
-  const [hover, setHover] = useState(true);
-  var element = document.getElementById('Event');
-  if (element) {
-    element.addEventListener('mouseenter', function () {
-      setHover(false);
-    });
-    element.addEventListener('mouseleave', function () {
-      setHover(true);
-    });
-  }
 
   if (isMobile) {
     return (

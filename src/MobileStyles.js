@@ -43,7 +43,8 @@ export const ContEventMobile = styled.div`
     border-style: solid;
     border-width: thin;
     border-radius: 11px;
-    
+    min-height:20vh;
+
 `
 export const EventLogoMobile = styled.div`
     position:absolute;
