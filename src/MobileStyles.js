@@ -48,9 +48,9 @@ export const ContEventMobile = styled.div`
 `
 export const EventLogoMobile = styled.div`
     position:absolute;
-    left: 2.5%;
-    bottom:0;
-    padding: 3.5%;
+    left: 1%;
+    bottom:2.5%;
+    padding: 3%;
 
 
     & .LogoSlide {
