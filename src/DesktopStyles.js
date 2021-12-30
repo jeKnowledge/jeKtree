@@ -132,7 +132,7 @@ export const EventImg = styled.div`
         border-radius: 10px;
         width: 45vw;
         height: auto;
-        margin-right:-20%;
+        margin-right:-21.5%;
 
            
       }
