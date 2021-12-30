@@ -22,6 +22,7 @@ export const JekSubTitle = styled.div`
     margin-top:-40px;
 `
 export const ContLinks = styled.div`
+    cursor: pointer;
     margin 0 20%;
     width:auto;
     text-align: center; 
@@ -30,6 +31,7 @@ export const ContLinks = styled.div`
 
 `
 export const Links = styled.div`
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,6 +60,7 @@ export const SubTitle = styled.div`
     font-size: 26px;
 `
 export const ContEvent = styled.div`
+    cursor: pointer;
     position:relative;
     width: 60%;
     min-height:60vh;
@@ -76,6 +79,7 @@ export const ContEvent = styled.div`
     
 `
 export const EventLogo = styled.div`
+    cursor: pointer;
     position:absolute;
     bottom:5.5vh;
     @media(max-width: 1400px) {
@@ -109,6 +113,7 @@ export const EventLogo = styled.div`
 
 `
 export const EventImg = styled.div`
+    cursor: pointer;
     object-fit: contain;
     & .EventoSlide {
         border-color: #EEEEEE;

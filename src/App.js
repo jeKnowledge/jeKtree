@@ -9,15 +9,19 @@ function App() {
   const isMobile = window.screen.width < 600
 
   const [hover, setHover] = useState(true);
-  var element = document.getElementById('Event');
-  if (element) {
-    element.addEventListener('mouseenter', function () {
-      setHover(false);
-    });
-    element.addEventListener('mouseleave', function () {
-      setHover(true);
-    });
+  window.onload = function () {
+    var element = document.getElementById('Event');
+    if (element) {
+      element.addEventListener('mouseenter', function () {
+        setHover(false);
+      });
+      element.addEventListener('mouseleave', function () {
+        setHover(true);
+      });
+    }
+
   }
+
 
   const [current, setCurrent] = useState(0);
   const length = Data.Events.length;
@@ -102,7 +106,7 @@ function App() {
             Data.Social.map(data => {
               return (
                 <div key={data.name}>
-                  <SocialMobile onClick={() => window.open(data.link, "_self")}><img src={data.path} alt={data.name} /></SocialMobile>
+                  <SocialMobile><a href={data.link}><img src={data.path} alt={data.name} /></a></SocialMobile>
                 </div>
               )
             })
@@ -116,10 +120,9 @@ function App() {
         <Header>
           <HeaderSocial>
             {
-
               Data.Social.map(data => {
                 return (
-                  <div key={data.name} onClick={() => window.open(data.link, "_self")}><img src={data.path} alt={data.name} /></div>
+                  <a style={{ cursor: "pointer" }} key={data.name} href={data.link}><img src={data.path} alt={data.name} /></a>
                 )
               })
             }
