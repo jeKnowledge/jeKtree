@@ -128,8 +128,8 @@ function App() {
             }
           </HeaderSocial>
         </Header>
-        <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={125} height={125} alt="" /></JekLogo>
-        <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={200} height={200} alt="" /></JekSubTitle>
+        <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={100} height={100} alt="" /></JekLogo>
+        <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={175} height={175} alt="" /></JekSubTitle>
 
         <ContLinks>
           {

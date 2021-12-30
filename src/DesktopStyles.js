@@ -12,7 +12,7 @@ export const HeaderSocial = styled.div`
     z-index:11;
     display: flex;
     padding-right:50px;
-    margin: 25px 0;
+    margin: 15px 0;
     gap:30px;
     justify-content: flex-end;
 `
@@ -38,7 +38,7 @@ export const Links = styled.div`
     align-items: center;
     justify-content: center;
     overflow:auto;
-    margin-bottom:1%;
+    margin-bottom:1.5%;
     border-color: #13234E;
     border-style: solid;
     border-width: thin;
@@ -47,7 +47,7 @@ export const Links = styled.div`
     font-family: 'Suisse-Int-Regular';
     font-size:24px;
     color: #EEEEEE;
-    min-height: 55px;
+    min-height: 50px;
 
     &:hover {
         background-color:#EEEEEE;
@@ -55,7 +55,7 @@ export const Links = styled.div`
       }
 `
 export const SubTitle = styled.div`
-    margin-top:30px;
+    margin-top:80px;
     font-family: 'Suisse-Int-Bold';
     color:#EEEEEE;
     padding:3%;
