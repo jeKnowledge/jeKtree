@@ -5,9 +5,11 @@ export const Header = styled.div`
     top:0;
     width:100%;
     background-color:#000530;
+    z-index:10;
 
 `
 export const HeaderSocial = styled.div`
+    z-index:11;
     display: flex;
     padding-right:50px;
     margin: 25px 0;
