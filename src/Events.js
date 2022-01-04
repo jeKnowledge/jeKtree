@@ -137,9 +137,9 @@ export const ContainerLogoMobile = styled.div`
 `
 export const ContainerImgMobile = styled.div`
     margin: 3% 0;
-    width:70%;
+    width:100%;
     object-fit: contain;
-    margin-left:28%;
+    margin-left:24%;
 `
 export const EventTitleMobile = styled.div`
     margin:5%;

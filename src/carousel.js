@@ -59,7 +59,7 @@ export default class Carousel extends React.Component {
                             <Slider ref={slider => (this.slider = slider)} {...settings}>
                                 {Data.Events.map((item, index) => (
                                     <div key={index}>
-                                        <img src={item.pathImg} alt="" width="95%" />
+                                        <img src={item.pathImg} alt="" width="70%" />
                                     </div>
                                 ))}
                             </Slider>
@@ -103,7 +103,7 @@ export default class Carousel extends React.Component {
                             <Slider ref={slider => (this.slider = slider)} {...settings}>
                                 {Data.Events.map((item, index) => (
                                     <div key={index}>
-                                        <img src={item.pathImg} alt="" width="60%" />
+                                        <img src={item.pathImg} alt="" width="95%" />
                                     </div>
                                 ))}
                             </Slider>
