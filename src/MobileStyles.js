@@ -114,6 +114,7 @@ export const EventTitleMobile = styled.div`
 `
 export const ContDotsMobile = styled.div`
     display: inline-flex;
+    margin-bottom:130px;
     & .dot{
         width: 5px;
         height: 5px;
@@ -127,8 +128,15 @@ export const ContDotsMobile = styled.div`
         background: #FFFFFF;
     }
  `
+
+export const ContFooterMobile = styled.div`
+    position:fixed;
+    width:100%;
+    z-index:10;
+    bottom:0;
+`
 export const FooterMobile = styled.div`
-    margin-top:10%;
+    z-index:11;
     background-color: #13234E;
     display:flex;
     gap:5%;

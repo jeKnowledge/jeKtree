@@ -1,26 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Data from './data.json'
-import { HeaderMobile, ContLinksMobile, LinksMobile, SubTitleMobile, ContEventMobile, EventLogoMobile, EventImgMobile, FooterMobile, SocialMobile, ContDotsMobile, EventTitleMobile } from './MobileStyles'
-import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links, SubTitle, ContEvent, EventLogo, EventImg, EventTitle, ContDots } from './DesktopStyles'
-
+import { HeaderMobile, ContLinksMobile, LinksMobile, SubTitleMobile, ContEventMobile, EventLogoMobile, EventImgMobile, ContFooterMobile, FooterMobile, SocialMobile, ContDotsMobile, EventTitleMobile } from './MobileStyles'
+import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links, SubTitle } from './DesktopStyles'
+import Carousel from "./carousel.js";
 
 function App() {
 
   const isMobile = window.screen.width < 600
 
-  const [hover, setHover] = useState(true);
-  window.onload = function () {
-    var element = document.getElementById('Event');
-    if (element) {
-      element.addEventListener('mouseenter', function () {
-        setHover(false);
-      });
-      element.addEventListener('mouseleave', function () {
-        setHover(true);
-      });
-    }
-
-  }
 
 
   const [current, setCurrent] = useState(0);
@@ -58,60 +45,20 @@ function App() {
             })
           }
         </ContLinksMobile>
-        <SubTitleMobile>Our Events</SubTitleMobile>
-
-        <ContEventMobile onClick={() => window.open(Data.Events[current].link, "_self")}>
-          <EventLogoMobile className='LogoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
-            {Data.Events.map((Image, index) => {
-              return (
-                <div
-                  className={index === current ? 'logo ativo' : 'logo'}
-                  key={index}
-                >
-                  {index === current && (
-                    <img src={Image.pathLogo} alt="" className='Imglogo' />
-                  )}
-                </div>
-              );
-            })}
-          </EventLogoMobile>
-          <EventImgMobile className='EventoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
-            {Data.Events.map((Image, index) => {
-              return (
-                <div
-                  className={index === current ? 'Evento ativo' : 'Evento'}
-                  key={index}
-                >
-                  {index === current && (
-                    <img src={Image.pathImg} alt="" className='ImgEvent' />
-                  )}
-                </div>
-              );
-            })}
-          </EventImgMobile>
-
-        </ContEventMobile>
-        <EventTitleMobile>{Data.Events[current].name}</EventTitleMobile>
-        <ContDotsMobile>
-          {Array.from({ length: Data.Events.length }).map((item, index) => (
-            <div
-              onClick={() => moveEvento(index)}
-              className={index === current ? "dot active" : "dot"}
-            ></div>
-          ))}
-        </ContDotsMobile>
-
-        <FooterMobile>
-          {
-            Data.Social.map(data => {
-              return (
-                <div key={data.name}>
-                  <SocialMobile><a href={data.link}><img src={data.path} alt={data.name} /></a></SocialMobile>
-                </div>
-              )
-            })
-          }
-        </FooterMobile>
+        <Carousel />
+        <ContFooterMobile>
+          <FooterMobile>
+            {
+              Data.Social.map(data => {
+                return (
+                  <div key={data.name}>
+                    <SocialMobile><a href={data.link}><img src={data.path} alt={data.name} /></a></SocialMobile>
+                  </div>
+                )
+              })
+            }
+          </FooterMobile>
+        </ContFooterMobile>
       </div >
     );
   } else {
@@ -143,49 +90,8 @@ function App() {
             })
           }
         </ContLinks>
-        <SubTitle>Our Events</SubTitle>
-        <ContEvent id="Event" onClick={() => window.open(Data.Events[current].link, "_self")}>
-          <EventLogo className='LogoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
-            {Data.Events.map((Image, index) => {
-              return (
-                <div
-                  className={index === current ? 'logo ativo' : 'logo'}
-                  key={index}>
-                  {index === current && (
-                    <img src={hover ? Image.pathLogo : Image.pathLogoHover}
-                      alt="" className='Imglogo' />)}
-                </div>
-              );
-            })
-            }
-          </EventLogo>
-          <EventImg className='EventoSlide' onClick={() => window.open(Data.Events[current].link, "_self")}>
-            {Data.Events.map((Image, index) => {
-              return (
-                <div
-                  className={index === current ? 'Evento ativo' : 'Evento'}
-                  key={index}
-                >
-                  {index === current && (
-                    <img src={Image.pathImg} alt="" className='ImgEvent' />
-                  )}
-                </div>
-              );
-            })}
-          </EventImg>
-        </ContEvent>
-
-        <EventTitle>{Data.Events[current].name}</EventTitle>
-
-        <ContDots>
-          {Array.from({ length: Data.Events.length }).map((item, index) => (
-            <div
-              onClick={() => moveEvento(index)}
-              className={index === current ? "dot active" : "dot"}
-            ></div>
-          ))}
-        </ContDots>
-      </div>
+        <Carousel />
+      </div >
     );
   }
 
