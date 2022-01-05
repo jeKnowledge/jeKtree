@@ -70,8 +70,8 @@
         {
             "name": "Porto.BC",
             "link": "https://portobc.com/",
-            "pathLogo": "LogosEventos\\portobc.png",
-            "pathLogoHover": "LogosEventos\\portobc_hover.png",
+            "pathLogo": "LogosEventos\\dotworks.png",
+            "pathLogoHover": "LogosEventos\\dotworksHover.png",
             "pathImg": "FotosEventos\\dotworks.png"
         }
     ]

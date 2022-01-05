@@ -27,7 +27,7 @@ export const Container = styled.div`
 
 export const ContainerLogo = styled.div`
     position:absolute;
-    bottom:5.5vh;
+    bottom:4.4vh;
     @media(max-width: 1400px) {
         bottom:1.5vh;
     }
@@ -59,7 +59,8 @@ export const ContainerLogo = styled.div`
 export const ContainerImg = styled.div`
     margin: 3% 0;
     object-fit: contain;
-    margin-left:19.5%;
+    padding-left:19.5%;
+    outline: none;
 `
 
 export const EventTitle = styled.div`
@@ -132,8 +133,6 @@ export const ContainerLogoMobile = styled.div`
         transition-duration: 1s;
         transform: scale(1.08);
       }
-
-
 `
 export const ContainerImgMobile = styled.div`
     margin: 3% 0;

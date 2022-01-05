@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Data from './data.json'
-import { HeaderMobile, ContLinksMobile, LinksMobile, SubTitleMobile, ContEventMobile, EventLogoMobile, EventImgMobile, ContFooterMobile, FooterMobile, SocialMobile, ContDotsMobile, EventTitleMobile } from './MobileStyles'
-import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links, SubTitle } from './DesktopStyles'
+import { HeaderMobile, ContLinksMobile, LinksMobile, ContFooterMobile, FooterMobile, SocialMobile } from './MobileStyles'
+import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links } from './DesktopStyles'
 import Carousel from "./carousel.js";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
             Data.Links.map(data => {
               return (
                 <div key={data.name}>
-                  <LinksMobile onClick={() => window.open(data.link, "_self")}>{data.name}</LinksMobile>
+                  <LinksMobile onClick={() => window.open(data.link, "_self")} >{data.name} </LinksMobile>
                 </div>
               )
             })
@@ -52,7 +52,7 @@ function App() {
               Data.Social.map(data => {
                 return (
                   <div key={data.name}>
-                    <SocialMobile><a href={data.link}><img src={data.path} alt={data.name} /></a></SocialMobile>
+                    <SocialMobile><a href={data.link}><img src={data.path} alt={data.name} height={38} width={38} /></a></SocialMobile>
                   </div>
                 )
               })
@@ -69,7 +69,7 @@ function App() {
             {
               Data.Social.map(data => {
                 return (
-                  <a style={{ cursor: "pointer" }} key={data.name} href={data.link}><img src={data.path} alt={data.name} /></a>
+                  <a style={{ cursor: "pointer" }} key={data.name} href={data.link}><img src={data.path} alt={data.name} height={38} width={38} /></a>
                 )
               })
             }
@@ -77,7 +77,6 @@ function App() {
         </Header>
         <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={100} height={100} alt="" /></JekLogo>
         <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={175} height={175} alt="" /></JekSubTitle>
-
         <ContLinks>
           {
 

@@ -52,11 +52,4 @@ export const Links = styled.div`
         background-color:#EEEEEE;
         color: #13234E;
       }
-`
-export const SubTitle = styled.div`
-    margin-top:80px;
-    font-family: 'Suisse-Int-Bold';
-    color:#EEEEEE;
-    padding:3%;
-    font-size: 26px;
 `;
