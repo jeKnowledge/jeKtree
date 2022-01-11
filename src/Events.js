@@ -15,6 +15,9 @@ export const Container = styled.div`
 
     &:hover {
         background-color:#EEEEEE;
+        -webkit-transition: background-color 500ms linear;
+        -ms-transition: background-color 500ms linear;
+        transition: background-color 500ms linear;
       } 
     margin: 0 auto;
     background-color:#13234E;

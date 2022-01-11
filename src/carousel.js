@@ -6,7 +6,10 @@ import { Container, ContainerLogo, ContainerImg, EventTitle, ContDots, SubTitle,
 import Data from './data.json'
 
 export default class Carousel extends React.Component {
-
+    handleClick = e => {
+        e.stopPropagation();
+        this.props.onClick();
+    }
 
     state = {
         hover: 0,
@@ -33,6 +36,19 @@ export default class Carousel extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             beforeChange: (current, next) => this.setState({ slideIndex: next }),
+            draggable: true,
+
+        };
+        const settingsDesktop = {
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            beforeChange: (current, next) => this.setState({ slideIndex: next }),
+            draggable: false,
 
         };
         const isMobile = window.screen.width < 600
@@ -40,7 +56,7 @@ export default class Carousel extends React.Component {
             return (
                 <div>
                     <SubTitleMobile>Our Events</SubTitleMobile>
-                    <ContainerMobile onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse}>
+                    <ContainerMobile onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(Data.Events[this.state.slideIndex].link, "_self")}>
                         <ContainerLogoMobile>
                             {Data.Events.map((Image, index) => {
                                 return (
@@ -55,7 +71,7 @@ export default class Carousel extends React.Component {
                             })
                             }
                         </ContainerLogoMobile>
-                        <ContainerImgMobile>
+                        <ContainerImgMobile onClick={this.handleClick} >
                             <Slider ref={slider => (this.slider = slider)} {...settings}>
                                 {Data.Events.map((item, index) => (
                                     <div key={index}>
@@ -83,8 +99,8 @@ export default class Carousel extends React.Component {
         else {
             return (
                 <div>
-                    <SubTitle>Our Events</SubTitle>
-                    <Container onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse}>
+                    <SubTitle >Our Events</SubTitle>
+                    <Container onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(Data.Events[this.state.slideIndex].link, "_self")}>
                         <ContainerLogo>
                             {Data.Events.map((Image, index) => {
                                 return (
@@ -99,8 +115,8 @@ export default class Carousel extends React.Component {
                             })
                             }
                         </ContainerLogo>
-                        <ContainerImg>
-                            <Slider ref={slider => (this.slider = slider)} {...settings}>
+                        <ContainerImg  >
+                            <Slider ref={slider => (this.slider = slider)} {...settingsDesktop}>
                                 {Data.Events.map((item, index) => (
                                     <div key={index}>
                                         <img src={item.pathImg} alt="" width="95%" />

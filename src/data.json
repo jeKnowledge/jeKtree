@@ -37,7 +37,7 @@
         },
         {
             "name": "jeKfolio",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://jekfolio.jeknowledge.com/"
         },
         {
             "name": "jeK Magazine",
@@ -70,9 +70,23 @@
         {
             "name": "Porto.BC",
             "link": "https://portobc.com/",
+            "pathLogo": "LogosEventos\\portobc.png",
+            "pathLogoHover": "LogosEventos\\portobc_hover.png",
+            "pathImg": "FotosEventos\\dotworks.png"
+        },
+        {
+            "name": "dotworks",
+            "link": "https://dotworks.jeknowledge.com/",
             "pathLogo": "LogosEventos\\dotworks.png",
             "pathLogoHover": "LogosEventos\\dotworksHover.png",
             "pathImg": "FotosEventos\\dotworks.png"
+        },
+        {
+            "name": "Lime",
+            "link": "https://www.limeconf.com/",
+            "pathLogo": "LogosEventos\\lime.png",
+            "pathLogoHover": "LogosEventos\\lime.png",
+            "pathImg": "FotosEventos\\lime.png"
         }
     ]
 }
