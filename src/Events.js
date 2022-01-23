@@ -30,7 +30,7 @@ export const Container = styled.div`
 
 export const ContainerLogo = styled.div`
     position:absolute;
-    bottom:4.4vh;
+    bottom:4.8vh;
     @media(max-width: 1400px) {
         bottom:1.5vh;
     }
@@ -60,9 +60,11 @@ export const ContainerLogo = styled.div`
 
 `
 export const ContainerImg = styled.div`
+
+    overflow:hidden;
     margin: 3% 0;
     object-fit: contain;
-    padding-left:19.5%;
+    margin-left:19.5%;
     outline: none;
 `
 

@@ -29,7 +29,7 @@
     "Links": [
         {
             "name": "Website",
-            "link": "https://www.instagram.com/jeknowledge/"
+            "link": "https://jeknowledge.pt/"
         },
         {
             "name": "Recrutamento",
@@ -72,7 +72,7 @@
             "link": "https://portobc.com/",
             "pathLogo": "LogosEventos\\portobc.png",
             "pathLogoHover": "LogosEventos\\portobc_hover.png",
-            "pathImg": "FotosEventos\\dotworks.png"
+            "pathImg": "FotosEventos\\PortoBC.png"
         },
         {
             "name": "dotworks",
@@ -87,6 +87,13 @@
             "pathLogo": "LogosEventos\\lime.png",
             "pathLogoHover": "LogosEventos\\lime.png",
             "pathImg": "FotosEventos\\lime.png"
+        },
+        {
+            "name": "Shift Appens",
+            "link": "https://shiftappens.jeknowledge.com/landing_page",
+            "pathLogo": "LogosEventos\\Shift_branco.png",
+            "pathLogoHover": "LogosEventos\\Shift_preto.png",
+            "pathImg": "FotosEventos\\shift.png"
         }
     ]
 }
