@@ -59,6 +59,12 @@ export const ContainerLogo = styled.div`
       }
 
 `
+export const SetaDireita = styled.div`
+
+`
+export const SetaEsquerda = styled.div`
+
+`
 export const ContainerImg = styled.div`
 
     overflow:hidden;

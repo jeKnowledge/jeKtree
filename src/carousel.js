@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, ContainerLogo, ContainerImg, EventTitle, ContDots, SubTitle, SubTitleMobile, ContainerMobile, ContainerLogoMobile, ContainerImgMobile, EventTitleMobile, ContDotsMobile } from './Events'
+import { Container, ContainerLogo, ContainerImg, SetaDireita, SetaEsquerda, EventTitle, ContDots, SubTitle, SubTitleMobile, ContainerMobile, ContainerLogoMobile, ContainerImgMobile, EventTitleMobile, ContDotsMobile } from './Events'
 import Data from './data.json'
 
 export default class Carousel extends React.Component {
     handleClick = e => {
         e.stopPropagation();
-        this.props.onClick();
+
     }
+
+
 
     state = {
         hover: 0,
@@ -40,7 +42,7 @@ export default class Carousel extends React.Component {
 
         };
         const settingsDesktop = {
-            arrows: false,
+            arrows: true,
             infinite: true,
             speed: 500,
             autoplay: true,
@@ -48,7 +50,7 @@ export default class Carousel extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             beforeChange: (current, next) => this.setState({ slideIndex: next }),
-            draggable: false,
+            draggable: true,
 
         };
         const isMobile = window.screen.width < 600
@@ -64,7 +66,7 @@ export default class Carousel extends React.Component {
                                         className={index === this.state.slideIndex ? 'logo ativo' : 'logo'}
                                         key={index}>
                                         {index === this.state.slideIndex && (
-                                            <img src={this.state.hover ? Image.pathLogoHover : Image.pathLogo}
+                                            <img src={Image.pathLogo}
                                                 alt="" className='Imglogo' />)}
                                     </div>
                                 );
@@ -80,7 +82,6 @@ export default class Carousel extends React.Component {
                                 ))}
                             </Slider>
                         </ContainerImgMobile>
-
                     </ContainerMobile >
                     <EventTitleMobile>{Data.Events[this.state.slideIndex].name}</EventTitleMobile>
 
@@ -115,7 +116,7 @@ export default class Carousel extends React.Component {
                             })
                             }
                         </ContainerLogo>
-                        <ContainerImg  >
+                        <ContainerImg onClick={this.handleClick} >
                             <Slider ref={slider => (this.slider = slider)} {...settingsDesktop}>
                                 {Data.Events.map((item, index) => (
                                     <div key={index}>
