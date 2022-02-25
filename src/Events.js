@@ -10,6 +10,7 @@ export const SubTitle = styled.div`
 `
 
 export const Container = styled.div`
+    cursor: pointer; 
     position:relative;
     width: 60%;
 
