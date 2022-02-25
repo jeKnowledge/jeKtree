@@ -54,14 +54,14 @@
     ],
     "Events": [
         {
-            "name": "Ai Sunsets",
+            "name": "AI Sunsets",
             "link": "https://aisunsets.com/",
             "pathLogo": "LogosEventos\\aisunsets_white.svg",
             "pathLogoHover": "LogosEventos\\aisunsets_hover.svg",
             "pathImg": "FotosEventos\\aisunsets.png"
         },
         {
-            "name": "Jek Academy",
+            "name": "jeKnowledge Academy",
             "link": "https://jeknowledge.pt/academy/",
             "pathLogo": "LogosEventos\\jekacademy.png",
             "pathLogoHover": "LogosEventos\\jekacademy_hover.png",
@@ -75,7 +75,7 @@
             "pathImg": "FotosEventos\\PortoBC.png"
         },
         {
-            "name": "dotworks",
+            "name": ".works",
             "link": "https://dotworks.jeknowledge.com/",
             "pathLogo": "LogosEventos\\dotworks.png",
             "pathLogoHover": "LogosEventos\\dotworksHover.png",
@@ -89,7 +89,7 @@
             "pathImg": "FotosEventos\\lime.png"
         },
         {
-            "name": "Shift Appens",
+            "name": "Shift APPens",
             "link": "https://shiftappens.jeknowledge.com/landing_page",
             "pathLogo": "LogosEventos\\Shift_branco.png",
             "pathLogoHover": "LogosEventos\\Shift_preto.png",
