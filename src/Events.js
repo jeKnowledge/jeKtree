@@ -84,6 +84,7 @@ export const EventTitle = styled.div`
     
 `
 export const ContDots = styled.div`
+    cursor: pointer; 
     display: inline-flex;
     margin-top:5px;
     margin-bottom:200px;
