@@ -8,8 +8,6 @@ jeKtree/node_modules
 # testing
 jeKtree/coverage
 
-# production
-jeKtree/build
 
 # misc
 .DS_Store
