@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Suisse-Int-Bold;
+  src: url('Fonts//SuisseIntlCond-Bold-WebS.ttf');
+}
+@font-face {
+  font-family: Suisse-Int-Regular;
+  src: url('Fonts//SuisseIntlCond-Regular-WebS.ttf');
+}
+@font-face {
+  font-family: Suisse-Int-Light;
+  src: url('Fonts//SuisseIntlCond-Light-WebS.ttf');
+}
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000530;
+  text-align: center; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.slick-slide img
+{
+  border-radius: 12px;
+  display: block;
+}
+.slick-prev {
+  left: 0.3% !important;
+  z-index: 10;
+}
+.slick-next {
+  right: 5.5% !important;
+  z-index: 10;
+}
