@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, ContainerLogo, ContainerImg, SetaDireita, SetaEsquerda, EventTitle, ContDots, SubTitle, SubTitleMobile, ContainerMobile, ContainerLogoMobile, ContainerImgMobile, EventTitleMobile, ContDotsMobile } from './Events'
+import { Container, ContainerLogo, ContainerImg, EventTitle, ContDots, SubTitle, SubTitleMobile, ContainerMobile, ContainerLogoMobile, ContainerImgMobile, EventTitleMobile, ContDotsMobile } from './Events'
 
 export default class Carousel extends React.Component {
     handleClick = e => {
@@ -55,7 +55,7 @@ export default class Carousel extends React.Component {
             return (
                 <div>
                     <SubTitleMobile>Our Events</SubTitleMobile>
-                    <ContainerMobile onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(Data.Events[this.state.slideIndex].link, "_self")}>
+                    <ContainerMobile onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(this.props.data.Events[this.state.slideIndex].link, "_self")}>
                         <ContainerLogoMobile>
                             {this.props.data.Events.map((Image, index) => {
                                 return (
@@ -94,49 +94,47 @@ export default class Carousel extends React.Component {
                 </div>
             );
         }
-        else {
-            return (
-                <div>
-                    <SubTitle >Our Events</SubTitle>
-                    <Container onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(Data.Events[this.state.slideIndex].link, "_self")}>
-                        <ContainerLogo>
-                            {this.props.data.Events.map((Image, index) => {
-                                return (
-                                    <div
-                                        className={index === this.state.slideIndex ? 'logo ativo' : 'logo'}
-                                        key={index}>
-                                        {index === this.state.slideIndex && (
-                                            <img src={this.state.hover ? Image.pathLogoHover : Image.pathLogo}
-                                                alt="" className='Imglogo' />)}
-                                    </div>
-                                );
-                            })
-                            }
-                        </ContainerLogo>
-                        <ContainerImg onClick={this.handleClick} >
-                            <Slider ref={slider => (this.slider = slider)} {...settingsDesktop}>
-                                {this.props.data.Events.map((item, index) => (
-                                    <div key={index}>
-                                        <img src={item.pathImg} alt="" width="95%" />
-                                    </div>
-                                ))}
-                            </Slider>
-                        </ContainerImg>
+        return (
+            <div>
+                <SubTitle >Our Events</SubTitle>
+                <Container onMouseEnter={this.HoverTrue} onMouseLeave={this.HoverFalse} onClick={() => window.open(this.props.data.Events[this.state.slideIndex].link, "_self")}>
+                    <ContainerLogo>
+                        {this.props.data.Events.map((Image, index) => {
+                            return (
+                                <div
+                                    className={index === this.state.slideIndex ? 'logo ativo' : 'logo'}
+                                    key={index}>
+                                    {index === this.state.slideIndex && (
+                                        <img src={this.state.hover ? Image.pathLogoHover : Image.pathLogo}
+                                            alt="" className='Imglogo' />)}
+                                </div>
+                            );
+                        })
+                        }
+                    </ContainerLogo>
+                    <ContainerImg onClick={this.handleClick} >
+                        <Slider ref={slider => (this.slider = slider)} {...settingsDesktop}>
+                            {this.props.data.Events.map((item, index) => (
+                                <div key={index}>
+                                    <img src={item.pathImg} alt="" width="95%" />
+                                </div>
+                            ))}
+                        </Slider>
+                    </ContainerImg>
 
-                    </Container >
-                    <EventTitle>{this.props.data.Events[this.state.slideIndex].name}</EventTitle>
+                </Container >
+                <EventTitle>{this.props.data.Events[this.state.slideIndex].name}</EventTitle>
 
-                    <ContDots>
-                        {Array.from({ length: this.props.data.Events.length }).map((item, index) => (
-                            <div
-                                onClick={() => this.slider.slickGoTo(index)}
-                                className={index === this.state.slideIndex ? "dot active" : "dot"}
-                                key={index}
-                            ></div>
-                        ))}
-                    </ContDots>
-                </div>
-            );
-        }
+                <ContDots>
+                    {Array.from({ length: this.props.data.Events.length }).map((item, index) => (
+                        <div
+                            onClick={() => this.slider.slickGoTo(index)}
+                            className={index === this.state.slideIndex ? "dot active" : "dot"}
+                            key={index}
+                        ></div>
+                    ))}
+                </ContDots>
+            </div>
+        );
     }
 }

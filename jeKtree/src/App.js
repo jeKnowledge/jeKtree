@@ -3,49 +3,39 @@ import { HeaderMobile, ContLinksMobile, LinksMobile, ContFooterMobile, FooterMob
 import { Header, HeaderSocial, JekLogo, JekSubTitle, ContLinks, Links } from './DesktopStyles'
 import Carousel from "./carousel.js";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 function App() {
+  const BACKENDURL = "https://backendjektree.jeknowledge.com/jektree";
 
-  const BACKENDURL = "http://localhost:8000/jektree/";
-
-  const [dataTree, setDataTree] = useState({"Social": [], "Links": [], "Events": []});
+  const [dataTree, setDataTree] = useState({ "Social": [], "Links": [], "Events": [] });
   const [length, setLength] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-
-      getData();
-
+    getData();
   }, []);
 
-  const getData = async () => {
+  const getData = () => {
+    axios.get(BACKENDURL).then((response) => {
+      setDataTree(response.data);
+      setLength(response.data.Events.length);
+      setLoaded(true);
+    }).catch((error) => {
+      console.log(error);
+      alert("Erro ao carregar os dados");
+    });
 
-    const getData = await axios.get(BACKENDURL);
-    axios
-      .all([getData])
-      .then(
-      axios.spread((...allData) => {
-        const allDataAPI = (allData[0].data);
-
-        setDataTree(allDataAPI);
-        setLength(allDataAPI.Events.length);
-        setLoaded(true);
-      })
-    )
   };
 
   const isMobile = window.screen.width < 600
 
   const [current, setCurrent] = useState(0);
-  
+
   const proxEvento = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  const moveEvento = index => {
-    setCurrent(index)
-  }
-  
   useEffect(() => {
     const interval = setInterval(() => {
       proxEvento();
@@ -62,7 +52,8 @@ function App() {
         </HeaderMobile>
 
         <ContLinksMobile >
-          {
+
+          {loaded ?
             dataTree.Links.map(data => {
               return (
                 <div key={data.name}>
@@ -70,12 +61,14 @@ function App() {
                 </div>
               )
             })
+            : <Spinner />
           }
         </ContLinksMobile>
-         {loaded ? <Carousel data={dataTree}/> : <p>Loading...</p>}
+        {loaded ? <Carousel data={dataTree} /> : <Spinner />}
         <ContFooterMobile>
           <FooterMobile>
             {
+              loaded ?
               dataTree.Social.map(data => {
                 return (
                   <div key={data.name}>
@@ -83,43 +76,46 @@ function App() {
                   </div>
                 )
               })
+              : <Spinner />
             }
           </FooterMobile>
         </ContFooterMobile>
       </div >
     );
-  } else {
-    return (
-      <div>
-        <Header>
-          <HeaderSocial>
-            {
+  }
+
+  return (
+    <div>
+      <Header>
+        <HeaderSocial>
+          {
+            loaded ?
               dataTree.Social.map(data => {
                 return (
                   <a style={{ cursor: "pointer" }} key={data.name} href={data.link}><img src={data.path} alt={data.name} height={38} width={38} /></a>
                 )
-              })
-            }
-          </HeaderSocial>
-        </Header>
-        <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={100} height={100} alt="" /></JekLogo>
-        <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={175} height={175} alt="" /></JekSubTitle>
-        <ContLinks>
-          {
-
-            dataTree.Links.map(data => {
-              return (
-                <div key={data.name}>
-                  <Links onClick={() => window.open(data.link, "_self")}>{data.name}</Links>
-                </div>
-              )
-            })
+              }) : <Spinner />
           }
-        </ContLinks>
-        {loaded ? <Carousel data={dataTree}/> : <p>Loading...</p>}
-      </div >
-    );
-  }
+        </HeaderSocial>
+      </Header>
+      <JekLogo><img src="RedesSociais+Jek\\JekLogo.svg" width={100} height={100} alt="" /></JekLogo>
+      <JekSubTitle><img src="RedesSociais+Jek\\JekSubTitle.svg" width={175} height={175} alt="" /></JekSubTitle>
+      <ContLinks>
+        {
+          loaded ?
+          dataTree.Links.map(data => {
+            return (
+              <div key={data.name}>
+                <Links onClick={() => window.open(data.link, "_self")}>{data.name}</Links>
+              </div>
+            )
+          })
+          : <Spinner />
+        }
+      </ContLinks>
+      {loaded ? <Carousel data={dataTree} /> : <Spinner />}
+    </div >
+  );
 
 }
 

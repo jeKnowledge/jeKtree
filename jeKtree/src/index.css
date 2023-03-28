@@ -11,6 +11,10 @@
   src: url('Fonts//SuisseIntlCond-Light-WebS.ttf');
 }
 
+* {
+  --duration: 1.4s;
+  --offset: 187;
+}
 
 body {
   margin: 0;
@@ -37,3 +41,31 @@ code {
   right: 5.5% !important;
   z-index: 10;
 }
+
+.spinner {
+  animation: rotator var(--duration) linear infinite;
+}
+
+.path {
+  stroke-dasharray: var(--offset);
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash var(--durantion) ease-in-out infinite, 
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: var(--offset); }
+  50% {
+    stroke-dashoffset: var(--offset)/4;
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: var(--offset);
+    transform:rotate(450deg);
+  }
+ }
