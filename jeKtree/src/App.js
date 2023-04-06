@@ -6,7 +6,7 @@ import axios from "axios";
 import Spinner from "./Spinner";
 
 function App() {
-  const BACKENDURL = "https://backendjektree.jeknowledge.com/jektree";
+  const BACKENDURL = "https://backendjektree.jeknowledge.com/jektree/";
 
   const [dataTree, setDataTree] = useState({ "Social": [], "Links": [], "Events": [] });
   const [length, setLength] = useState(0);
@@ -17,14 +17,12 @@ function App() {
   }, []);
 
   const getData = () => {
-    // add Access-Control-Allow-Origin header to the request
-
     axios.get(BACKENDURL, {
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
+        'Origin': '*'
       }
     }).then((response) => {
+      console.log(response);
       setDataTree(response.data);
       setLength(response.data.Events.length);
       setLoaded(true);
@@ -32,7 +30,6 @@ function App() {
       console.log(error);
       alert("Erro ao carregar os dados");
     });
-
   };
 
   const isMobile = window.screen.width < 600
