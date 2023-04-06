@@ -22,7 +22,6 @@ function App() {
         'Origin': '*'
       }
     }).then((response) => {
-      console.log(response);
       setDataTree(response.data);
       setLength(response.data.Events.length);
       setLoaded(true);
