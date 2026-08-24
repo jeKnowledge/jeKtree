@@ -21,6 +21,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "overrides": {
+    "eslint": "8.44.0",
+    "typescript": "4.9.5"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

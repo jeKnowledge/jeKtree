@@ -6,7 +6,8 @@ import axios from "axios";
 import Spinner from "./Spinner";
 
 function App() {
-  const BACKENDURL = "https://backendjektree.jeknowledge.com/jektree";
+  const deploy = false;
+  const BACKENDURL = deploy ? "https://jektree-backend.onrender.com" : "http://localhost:5000";
 
   const [dataTree, setDataTree] = useState({ "Social": [], "Links": [], "Events": [] });
   const [length, setLength] = useState(0);
